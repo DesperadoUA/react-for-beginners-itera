@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import store from './store'
+import Header from './components/header'
+import Footer from './components/footer'
+import UserThumbnail from './components/user/thumbnail'
+import UserHead from './components/user/head'
+import Content from './components/content'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className='container'>
+        <div className='row'>
+          <div className='leftPart'>
+           <UserThumbnail 
+                    src={store.user.thumbnail}
+           />
+          </div>
+          <div className='rightPart'>
+            <UserHead 
+                    name={store.user.name} 
+                    surname={store.user.surname} 
+                    year={store.user.year}
+            />
+            <Content 
+                    text={store.user.biography} 
+            />
+          </div>
+        </div>
+      </div>
+      <Footer />
     </div>
-  );
+  )
 }
-
-export default App;
+export default App

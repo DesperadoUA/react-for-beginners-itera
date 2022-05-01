@@ -1,0 +1,6 @@
+.footer {
+    padding: 15px 0px;
+    background: rgb(41, 39, 39);
+    color: white;
+    font-size: calc(10px + 2vmin);
+}
